@@ -1,0 +1,345 @@
+<Tela>
+    id:ScMan
+    colored : 0
+    format: 0
+    orientation:'vertical'
+    canvas:
+        Color:
+            rgba: [176/256,0,0,1]
+        Rectangle:
+            pos: self.pos
+            size:self.size
+
+#-=-=-=-=-=-=-Menu=-=-=-=-=-=-=#
+    Screen:
+        name: 'Principal'
+        BoxLayout:
+            id:box1
+            orientation:'horizontal'
+            Label:
+                font_size:20
+                id: data
+                size_hint:None,None
+                text: 'Data: '
+                pos_hint: {'x': 0, 'y': 1}
+        BoxLayout:
+            padding: 20
+            spacing:5
+            orientation: 'vertical'
+            Label:
+                text:'CartórioApp'
+                font_size:40
+                bold:True
+                color:[1,1,1,1]
+            Image:
+                source: "LogoCartório.png"
+            Button:
+                text:'Renomeação'
+                size_hint:(None,None)
+                color: 1,1,1,1
+                bold:True
+                font_size: 20
+                background_color:0,0,0,1
+                size:[350,70]
+                pos_hint:{"center_x":0.5,"center_y":0.5}
+                on_press:ScMan.current = "Rename"  
+            Button:
+                text:'Formulário'
+                size_hint:(None,None)
+                color: 1,1,1,1
+                font_size: 20
+                bold: True
+                background_color:0,0,0,1
+                size:[350,70]
+                on_press:app.Forms(contato)
+                pos_hint:{"center_x":0.5,"center_y":0.5}
+                 
+            Button:
+                text:'Contato'
+                id:contato
+                color: 1,1,1,1
+                font_size: 15
+                bold:True
+                background_color:0,0,0,1
+                on_press:app.Link(contato)
+                size_hint: None,None
+                size:[200,70]
+                pos_hint:{"center_x":0.5,"center_y":0.5}
+        BoxLayout:
+            orientation:'vertical'
+            size_hint:(None,None)
+            Image:
+                source:'Laboria.png'       
+#-=-=-=-=-=-=Menu==-=-=-=-=-=-=#
+#-=-=-=-=-=-=-Renomeação-=-=-=-=-=-=#
+    Screen:
+        name:'Rename'
+        BoxLayout:
+            orientation: 'vertical'
+            Label:
+                text:'Renomeação de itens'
+                font_size:50
+                spacing:5
+                color:[255/256,103/256,0,1]
+                bold:True
+            Label:
+                text:'Selecione a Cor: '
+                font_size:30
+                spacing: 10
+                padding:20
+                size_hint:(None,None)
+                size:(220,50)
+                color:[255/256,103/256,0,1]
+#-=-=-=-=-=-=-Renomeação-=-=-=-=-=-=#
+#-=-=-=-=-=-Cores-=-=-=-=-=-=-#
+            BoxLayout:
+                orientation:'vertical'
+                BoxLayout:
+                    orientation:'horizontal'
+                    font_size:10
+                    ToggleButton:
+                        id:TgbPreto
+                        text: "Preto"
+                        color:1,1,1,1
+                        background_color:0,0,0,1
+                        group: 'Cor'
+                        state: 'normal'
+                        on_press: root.colored = 1
+
+                    ToggleButton:
+                        id:TgbAzul
+                        text: "Azul"
+                        color:1,1,1,1
+                        background_color:0,0,1,1
+                        group: 'Cor'
+                        state: 'normal'
+                        on_press: root.colored = 2
+
+                    ToggleButton:
+                        id:TgbVerde
+                        text: "Verde"
+                        color:1,1,1,1
+                        background_color:0,1,0,1
+                        group: 'Cor'
+                        state: 'normal'
+                        on_press: root.colored = 3
+
+                    ToggleButton:
+                        id:TgbVermelho
+                        text: "Vermelho"
+                        color:1,1,1,1
+                        background_color:255/256, 80/256, 84/256,1
+                        group: 'Cor'
+                        state: 'normal'
+                        on_press: root.colored = 4
+
+                    ToggleButton:
+                        id:TgbAmarelo
+                        text: "Amarelo"
+                        color:1,1,1,1
+                        background_color:255/256,255/256,0,1
+                        group: 'Cor'
+                        state: 'normal'
+                        on_press: root.colored = 5
+                BoxLayout:
+                    orientation:'horizontal'
+                    font_size:10
+                    ToggleButton:
+                        id:TgbRosa
+                        text: "Rosa"
+                        color:1,1,1,1
+                        background_color:255/256,105/256,180/256,1
+                        group: 'Cor'
+                        state: 'normal'
+                        on_press: root.colored = 6
+
+                    ToggleButton:
+                        id:TgbRoxo
+                        text: "Roxo"
+                        color:1,1,1,1
+                        background_color:128/256,0,128/256,1
+                        group: 'Cor'
+                        state: 'normal'
+                        on_press: root.colored = 7
+
+                    ToggleButton:
+                        id:TgbAqua
+                        text: "Aqua"
+                        color:1,1,1,1
+                        background_color:0, 255/256, 255/256,1
+                        group: 'Cor'
+                        state: 'normal'
+                        on_press: root.colored = 8
+
+                    ToggleButton:
+                        id:TgbOuro
+                        text: "Ouro"
+                        color:1,1,1,1
+                        background_color:255/256,215/256,0,1
+                        group: 'Cor'
+                        state: 'normal'
+                        on_press: root.colored = 9
+
+                    ToggleButton:
+                        id:TgbCinza
+                        text: "Cinza"
+                        color:1,1,1,1
+                        background_color:169/256,169/256,169/256,1
+                        group: 'Cor'
+                        state: 'normal'
+                        on_press: root.colored = 10
+                BoxLayout:
+                    orientation:'horizontal'
+                    font_size:10
+                    ToggleButton:
+                        id:TgbAzulEscuro
+                        text: "Azul Escuro"
+                        color:1,1,1,1
+                        background_color:0,0,139/256,1
+                        group: 'Cor'
+                        state: 'normal'
+                        on_press: root.colored = 11
+
+                    ToggleButton:
+                        id:TgbVermelhoEscuro
+                        text: "Vermelho Escuro"
+                        color:1,1,1,1
+                        background_color:178/256, 34/256, 34/256,1
+                        group: 'Cor'
+                        state: 'normal'
+                        on_press: root.colored = 12
+
+                    ToggleButton:
+                        id:TgbVerdeEscuro
+                        text: "Verde Escuro"
+                        color:1,1,1,1
+                        background_color:0,128/256,0,1
+                        group: 'Cor'
+                        state: 'normal'
+                        on_press: root.colored = 13
+
+                    ToggleButton:
+                        id:TgbCinzaEscuro
+                        text: "Cinza Escuro"
+                        color:1,1,1,1
+                        background_color:105/256,105/256,132/256,1
+                        group: 'Cor'
+                        state: 'normal'
+                        on_press: root.colored = 14
+
+                    ToggleButton:
+                        id:TgbAquaEscuro
+                        text: "Aqua Escuro"
+                        color:1,1,1,1
+                        background_color:64/256, 224/256, 208/256,1
+                        group: 'Cor'
+                        state: 'normal'
+                        on_press: root.colored = 15
+#-=-=-=-=-=-Cores=-=-=-=-=-=-=-#
+
+#-=-=-=-=-=-Formatação-=-=-=-=-#
+            BoxLayout:
+                orientation:'vertical'
+                Label:
+                    text:'Selecione a Formatação: '
+                    font_size:30
+                    spacing: 10
+                    padding:20
+                    size_hint:(None,None)
+                    size:(340,50)
+                    color:[255/256,103/256,0,1]
+                BoxLayout:
+                    orientation:'horizontal'
+                    ToggleButton:
+                        id:TgbNegrito
+                        text: "Negrito"
+                        bold: True
+                        spacing: 10
+                        padding: 20
+                        font_size:20
+                        size:(100,100)
+                        color:1,1,1,1
+                        background_color:0,0,0,1
+                        group: 'Format'
+                        state: 'normal'
+                        on_press: root.format=1
+
+                    ToggleButton:
+                        id:TgbItalic
+                        text: "Itálico"
+                        spacing: 10
+                        font_size:20
+                        padding:20
+                        size:(100,100)
+                        color:1,1,1,1
+                        background_color:0,0,0,1
+                        group: 'Format'
+                        state: 'normal'
+                        on_press: root.format=2
+#-=-=-=-=-=-Formatação-=-=-=-==#    
+            BoxLayout:
+                orientation:'vertical'
+                Label:
+                    text: 'Insira o Texto:'
+                    font_size:30
+                    spacing: 10
+                    padding:20
+                    size_hint:(None,None)
+                    size:(180,50)
+                    color:[255/256,103/256,0,1]
+                BoxLayout:
+                    orientation:'horizontal'
+                    TextInput:
+                        size_hint_y: 0.8
+                        spacing: 30
+                        id:nome
+                    Button:
+                        text:'Enviar'
+                        background_color: 0,0.6,0,1
+                        size_hint:(None,None)
+                        size:[150,60]
+                        pos_hint:{"center_x":0.5,}
+                        size_hint_y: 0.8
+                        on_press:app.rename(nome.text,root.colored,root.format)
+            BoxLayout:
+                orientation:'vertical'
+                BoxLayout:
+                    id:box2
+                    orientation:'horizontal'
+                    Label:
+                        text: 'Resultado:'
+                        font_size:30
+                        spacing: 10
+                        padding:20
+                        size_hint:(None,None)
+                        size:(220,50)
+                        color:[255/256,103/256,0,1]
+
+                    TextInput:
+                        id:renomeado
+                        multiline: True
+                        font_size:25
+                        readonly: True
+                        size_hint_y: 0.8
+                        spacing: 30
+            BoxLayout:
+                orientation:'horizontal'
+                Button:
+                    size_hint:(None,None)
+                    background_normal:'voltar.png'
+                    on_press:ScMan.current='Principal'
+            
+                    
+
+
+
+
+
+                
+
+
+
+
+
+
+
