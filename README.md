@@ -1,5 +1,4 @@
-# CartorioApp
-Este projeto tem o intuito de aprimorar e automatizar os trabalhos do cartório, como também auxiliar na administração dos chefes
+
 ## Versão do python
 - 3.11.3
 
